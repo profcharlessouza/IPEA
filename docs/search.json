@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Acompanhamento e Avaliação de Políticas",
     "section": "",
-    "text": "De volta ao topo"
+    "text": "O objetivo deste site é divulgar informações sobre o projeto de pesquisa do Instituto de Pesquisa Econômica e Aplicada (IPEA) entitulado ‘Acompanhamento e Avaliação de Políticas – Subsídios para o Núcleo de Inteligência Regional’.\n\n\n\n De volta ao topo"
   },
   {
     "objectID": "educacao.html",
@@ -52,43 +52,43 @@
     "objectID": "mip.html#produção",
     "href": "mip.html#produção",
     "title": "Matriz Insumo-Produto",
-    "section": "Produção",
-    "text": "Produção"
+    "section": "4.1 Produção",
+    "text": "4.1 Produção"
   },
   {
     "objectID": "mip.html#emprego",
     "href": "mip.html#emprego",
     "title": "Matriz Insumo-Produto",
-    "section": "Emprego",
-    "text": "Emprego"
+    "section": "4.2 Emprego",
+    "text": "4.2 Emprego"
   },
   {
     "objectID": "mip.html#renda",
     "href": "mip.html#renda",
     "title": "Matriz Insumo-Produto",
-    "section": "Renda",
-    "text": "Renda"
+    "section": "4.3 Renda",
+    "text": "4.3 Renda"
   },
   {
     "objectID": "mip.html#outros",
     "href": "mip.html#outros",
     "title": "Matriz Insumo-Produto",
-    "section": "Outros",
-    "text": "Outros"
+    "section": "4.4 Outros",
+    "text": "4.4 Outros"
   },
   {
     "objectID": "mip.html#índices-de-ligações-hr",
     "href": "mip.html#índices-de-ligações-hr",
     "title": "Matriz Insumo-Produto",
-    "section": "Índices de Ligações HR",
-    "text": "Índices de Ligações HR"
+    "section": "5.1 Índices de Ligações HR",
+    "text": "5.1 Índices de Ligações HR"
   },
   {
     "objectID": "mip.html#índices-puros-de-ligação",
     "href": "mip.html#índices-puros-de-ligação",
     "title": "Matriz Insumo-Produto",
-    "section": "Índices Puros de Ligação",
-    "text": "Índices Puros de Ligação"
+    "section": "5.2 Índices Puros de Ligação",
+    "text": "5.2 Índices Puros de Ligação"
   },
   {
     "objectID": "produtividade_trabalho.html",
@@ -117,5 +117,33 @@
     "title": "Índice de Sustentabilidade Ambiental",
     "section": "",
     "text": "Em elaboração.\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre o Projeto",
+    "section": "",
+    "text": "A Política Nacional de Desenvolvimento Regional - PNDR tem como finalidade atacar as desigualdades econômicas e sociais, com ações planejadas e articuladas entre os entes públicos e privados, estimulando e apoiando o desenvolvimento regional. O Decreto que instituiu a PNDR também criou o Sistema Nacional de Informações do Desenvolvimento Regional, com a finalidade de monitorar e avaliar os instrumentos financeiros, planos, programas e ações dessa política. Para esse fim, o Ipea apoiará o Ministério da Integração e Desenvolvimento Regional - MIDR na construção de indicadores, metodologia de monitoramento e desenvolvimento de outros trabalhos que possam auxiliar no desenvolvimento de políticas regionais. Assim, o propósito do trabalho consiste em:\n\nDefinição das bases técnicas para a implementação do monitoramento adequado dos instrumentos de planejamento e financiamento da Política Nacional de Desenvolvimento Regional (PNDR);\nMetodologia e processos para a execução de avaliações ex-ante de ações, políticas e/ou programas que coadunam com os objetivos da política regional.\nProver suporte ao desenvolvimento das competências técnicas de análise daconjuntura regional via Núcleo de Inteligência Regional.\n\nAssim, o objetivo principal da Pesquisa é desenvolver e aprimorar o monitoramento da dinâmica territorial no Brasil, ampliar metodologias de avaliação ex-ante como forma de auxiliar no planejamento territorial brasileiro e no desenho de políticas públicas.\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "dicas.html",
+    "href": "dicas.html",
+    "title": "Sobre o Projeto",
+    "section": "",
+    "text": "01. Caminhos com here()\n\nhere::here()\n\n[1] \"C:/Users/Administrador/Documents/Pos/IPEA/IPEA\"\n\nhere::here('styles.css')\n\n[1] \"C:/Users/Administrador/Documents/Pos/IPEA/IPEA/styles.css\"\n\n\n\n\n0.2 bônus! trocar idioma\nno _quarto.yml\nlang: pt\n\n\n0.3 chunks com #|\nexemplo no rmarkdown\n\n\n\n\n\nlegenda\n\n\n\n\nExemplo no quarto\n\n#| out.width: \"50%\"\n\n#| fig.align: 'center'\n\n#| echo: false\n\n#| fig-cap: 'legenda no quarto'\n\nknitr::include_graphics(here::here(\"images/watts-strongatz.png\"))\n\n\n\n\nPode-se converter os chunk_header para o formato quarto\n\nknitr::convert_chunk_header(\"index.qmd\", \"index2.qmd\")\n\nCriou o arquivo index2 com o formato do quarto.\n#0.4 Citações no visual editor\ncolocar / para aparecer opções dentre elas citations\n[@quarto]\n\n\n0.5 include ou child\nInclui outro arquivo .qmd no atual.\nA Política Nacional de Desenvolvimento Regional - PNDR tem como finalidade atacar as desigualdades econômicas e sociais, com ações planejadas e articuladas entre os entes públicos e privados, estimulando e apoiando o desenvolvimento regional. O Decreto que instituiu a PNDR também criou o Sistema Nacional de Informações do Desenvolvimento Regional, com a finalidade de monitorar e avaliar os instrumentos financeiros, planos, programas e ações dessa política. Para esse fim, o Ipea apoiará o Ministério da Integração e Desenvolvimento Regional - MIDR na construção de indicadores, metodologia de monitoramento e desenvolvimento de outros trabalhos que possam auxiliar no desenvolvimento de políticas regionais. Assim, o propósito do trabalho consiste em:\n\nDefinição das bases técnicas para a implementação do monitoramento adequado dos instrumentos de planejamento e financiamento da Política Nacional de Desenvolvimento Regional (PNDR);\nMetodologia e processos para a execução de avaliações ex-ante de ações, políticas e/ou programas que coadunam com os objetivos da política regional.\nProver suporte ao desenvolvimento das competências técnicas de análise daconjuntura regional via Núcleo de Inteligência Regional.\n\nAssim, o objetivo principal da Pesquisa é desenvolver e aprimorar o monitoramento da dinâmica territorial no Brasil, ampliar metodologias de avaliação ex-ante como forma de auxiliar no planejamento territorial brasileiro e no desenho de políticas públicas.\n\n\n0.6 Usando parâmetros\n\n# estabeleço os parâmetros no cabeçalho\n\nparams$APP\n\nNULL\n\nparams$Charles\n\n[1] \"Charles Araujo de Souza\"\n\n\n\n\n0.7 Inline + Formatação\nA base cars tem 50\n\n#| echo: true\n\npi_bonitinho &lt;- round(pi, 2)\n\npi_reais &lt;- scales::dollar(pi, prefix = \"R$\",\n\ndecimal.mark = ',',\n\nbig.mark = '.')\n\nNúmero pi 3.14\nReais R$3,14\n\n\n0.8 Personalizar templates\nstyles.css\n\n\n0.9 Mermaid\n\n\n\n\n%%| fig-width: 6.5\n\nflowchart LR\n\nA[Hard edge] --&gt; B(Round edge)\n\nB --&gt; C{Decision}\n\n\n\n\n\n\n\n\n\n\nsequenceDiagram\n\nparticipant Alice\n\nparticipant Bob\n\nAlice-&gt;&gt;John: Hello John, how are you?\n\nloop Healthcheck\n\nJohn-&gt;&gt;John: Fight against hypochondria\n\nend\n\nNote right of John: Rational thoughts &lt;br/&gt;prevail!\n\nJohn--&gt;&gt;Alice: Great!\n\nJohn-&gt;&gt;Bob: How about you?\n\nBob--&gt;&gt;John: Jolly good!\n\n\n\n\n\n\n\n\n10 Font awesome\nInstalar as extensões\n\nquarto add quarto-ext/fontawesome\n\n\n\n\n\n\n\n\n\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "mip.html",
+    "href": "mip.html",
+    "title": "Matriz Insumo-Produto",
+    "section": "",
+    "text": "Em elaboração."
+  },
+  {
+    "objectID": "colaboradores.html",
+    "href": "colaboradores.html",
+    "title": "Colaboradores",
+    "section": "",
+    "text": "De volta ao topo"
   }
 ]

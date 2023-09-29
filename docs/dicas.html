@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>IPEA - Matriz Insumo-Produto</title>
+<title>IPEA - dicas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -39,6 +73,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -58,6 +94,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Enviar"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -89,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Sobre o Projeto</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./mip.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./mip.html" rel="" target="">
  <span class="menu-text">Matriz Insumo-Produto</span></a>
   </li>  
   <li class="nav-item">
@@ -98,11 +137,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -112,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Matriz Insumo-Produto</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Sobre o Projeto</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -207,24 +241,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#modelo-aberto" id="toc-modelo-aberto" class="nav-link active" data-scroll-target="#modelo-aberto">1. Modelo Aberto</a></li>
-  <li><a href="#modelo-fechado" id="toc-modelo-fechado" class="nav-link" data-scroll-target="#modelo-fechado">2. Modelo Fechado</a></li>
-  <li><a href="#modelo-pelo-lado-da-oferta" id="toc-modelo-pelo-lado-da-oferta" class="nav-link" data-scroll-target="#modelo-pelo-lado-da-oferta">3. Modelo pelo Lado da Oferta</a></li>
-  <li><a href="#multiplicadores" id="toc-multiplicadores" class="nav-link" data-scroll-target="#multiplicadores">4. Multiplicadores</a>
-  <ul class="collapse">
-  <li><a href="#produção" id="toc-produção" class="nav-link" data-scroll-target="#produção">4.1 Produção</a></li>
-  <li><a href="#emprego" id="toc-emprego" class="nav-link" data-scroll-target="#emprego">4.2 Emprego</a></li>
-  <li><a href="#renda" id="toc-renda" class="nav-link" data-scroll-target="#renda">4.3 Renda</a></li>
-  <li><a href="#outros" id="toc-outros" class="nav-link" data-scroll-target="#outros">4.4 Outros</a></li>
-  </ul></li>
-  <li><a href="#índices-de-ligação" id="toc-índices-de-ligação" class="nav-link" data-scroll-target="#índices-de-ligação">5. Índices de Ligação</a>
-  <ul class="collapse">
-  <li><a href="#índices-de-ligações-hr" id="toc-índices-de-ligações-hr" class="nav-link" data-scroll-target="#índices-de-ligações-hr">5.1 Índices de Ligações HR</a></li>
-  <li><a href="#índices-puros-de-ligação" id="toc-índices-puros-de-ligação" class="nav-link" data-scroll-target="#índices-puros-de-ligação">5.2 Índices Puros de Ligação</a></li>
-  </ul></li>
-  <li><a href="#campo-de-influência" id="toc-campo-de-influência" class="nav-link" data-scroll-target="#campo-de-influência">6. Campo de Influência</a></li>
-  <li><a href="#extração-hipotética" id="toc-extração-hipotética" class="nav-link" data-scroll-target="#extração-hipotética">7. Extração Hipotética</a></li>
-  <li><a href="#decomposição-estrutural" id="toc-decomposição-estrutural" class="nav-link" data-scroll-target="#decomposição-estrutural">8. Decomposição Estrutural</a></li>
+  <li><a href="#caminhos-com-here" id="toc-caminhos-com-here" class="nav-link active" data-scroll-target="#caminhos-com-here">01. Caminhos com here()</a></li>
+  <li><a href="#bônus-trocar-idioma" id="toc-bônus-trocar-idioma" class="nav-link" data-scroll-target="#bônus-trocar-idioma">0.2 bônus! trocar idioma</a></li>
+  <li><a href="#chunks-com" id="toc-chunks-com" class="nav-link" data-scroll-target="#chunks-com">0.3 chunks com #|</a></li>
+  <li><a href="#include-ou-child" id="toc-include-ou-child" class="nav-link" data-scroll-target="#include-ou-child">0.5 include ou child</a></li>
+  <li><a href="#usando-parâmetros" id="toc-usando-parâmetros" class="nav-link" data-scroll-target="#usando-parâmetros">0.6 Usando parâmetros</a></li>
+  <li><a href="#inline-formatação" id="toc-inline-formatação" class="nav-link" data-scroll-target="#inline-formatação">0.7 Inline + Formatação</a></li>
+  <li><a href="#personalizar-templates" id="toc-personalizar-templates" class="nav-link" data-scroll-target="#personalizar-templates">0.8 Personalizar templates</a></li>
+  <li><a href="#mermaid" id="toc-mermaid" class="nav-link" data-scroll-target="#mermaid">0.9 Mermaid</a></li>
+  <li><a href="#font-awesome" id="toc-font-awesome" class="nav-link" data-scroll-target="#font-awesome">10 Font awesome</a></li>
   </ul>
 </nav>
     </div>
@@ -233,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Matriz Insumo-Produto</h1>
+<h1 class="title">Sobre o Projeto</h1>
 </div>
 
 
@@ -248,48 +273,172 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Em elaboração.</p>
-<section id="modelo-aberto" class="level1">
-<h1>1. Modelo Aberto</h1>
+<section id="caminhos-com-here" class="level1">
+<h1>01. Caminhos com here()</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">here</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/Administrador/Documents/Pos/IPEA/IPEA"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'styles.css'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/Administrador/Documents/Pos/IPEA/IPEA/styles.css"</code></pre>
+</div>
+</div>
 </section>
-<section id="modelo-fechado" class="level1">
-<h1>2. Modelo Fechado</h1>
+<section id="bônus-trocar-idioma" class="level1">
+<h1>0.2 bônus! trocar idioma</h1>
+<p>no _quarto.yml</p>
+<p>lang: pt</p>
 </section>
-<section id="modelo-pelo-lado-da-oferta" class="level1">
-<h1>3. Modelo pelo Lado da Oferta</h1>
+<section id="chunks-com" class="level1">
+<h1>0.3 chunks com #|</h1>
+<p>exemplo no rmarkdown</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/watts-strongatz.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">legenda</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Exemplo no quarto</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| out.width: "50%"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.align: 'center'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: 'legenda no quarto'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"images/watts-strongatz.png"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="images/watts-strongatz.png" class="img-fluid" width="482"></p>
+</div>
+</div>
+<p>Pode-se converter os chunk_header para o formato quarto</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">convert_chunk_header</span>(<span class="st">"index.qmd"</span>, <span class="st">"index2.qmd"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Criou o arquivo index2 com o formato do quarto.</p>
+<p>#0.4 Citações no visual editor</p>
+<p><code>colocar / para aparecer opções dentre elas citations</code></p>
+<p><span class="citation" data-cites="quarto">[@quarto]</span></p>
 </section>
-<section id="multiplicadores" class="level1">
-<h1>4. Multiplicadores</h1>
-<section id="produção" class="level2">
-<h2 class="anchored" data-anchor-id="produção">4.1 Produção</h2>
+<section id="include-ou-child" class="level1">
+<h1>0.5 include ou child</h1>
+<p>Inclui outro arquivo .qmd no atual.</p>
+<p>A Política Nacional de Desenvolvimento Regional - PNDR tem como finalidade atacar as desigualdades econômicas e sociais, com ações planejadas e articuladas entre os entes públicos e privados, estimulando e apoiando o desenvolvimento regional. O Decreto que instituiu a PNDR também criou o Sistema Nacional de Informações do Desenvolvimento Regional, com a finalidade de monitorar e avaliar os instrumentos financeiros, planos, programas e ações dessa política. Para esse fim, o Ipea apoiará o Ministério da Integração e Desenvolvimento Regional - MIDR na construção de indicadores, metodologia de monitoramento e desenvolvimento de outros trabalhos que possam auxiliar no desenvolvimento de políticas regionais. Assim, o propósito do trabalho consiste em:</p>
+<ol type="I">
+<li><p>Definição das bases técnicas para a implementação do monitoramento adequado dos instrumentos de planejamento e financiamento da Política Nacional de Desenvolvimento Regional (PNDR);</p></li>
+<li><p>Metodologia e processos para a execução de avaliações ex-ante de ações, políticas e/ou programas que coadunam com os objetivos da política regional.</p></li>
+<li><p>Prover suporte ao desenvolvimento das competências técnicas de análise daconjuntura regional via Núcleo de Inteligência Regional.</p></li>
+</ol>
+<p>Assim, o objetivo principal da Pesquisa é desenvolver e aprimorar o monitoramento da dinâmica territorial no Brasil, ampliar metodologias de avaliação ex-ante como forma de auxiliar no planejamento territorial brasileiro e no desenho de políticas públicas.</p>
 </section>
-<section id="emprego" class="level2">
-<h2 class="anchored" data-anchor-id="emprego">4.2 Emprego</h2>
+<section id="usando-parâmetros" class="level1">
+<h1>0.6 Usando parâmetros</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estabeleço os parâmetros no cabeçalho</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>APP</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>Charles</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Charles Araujo de Souza"</code></pre>
+</div>
+</div>
 </section>
-<section id="renda" class="level2">
-<h2 class="anchored" data-anchor-id="renda">4.3 Renda</h2>
+<section id="inline-formatação" class="level1">
+<h1>0.7 Inline + Formatação</h1>
+<p>A base cars tem 50</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>pi_bonitinho <span class="ot">&lt;-</span> <span class="fu">round</span>(pi, <span class="dv">2</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>pi_reais <span class="ot">&lt;-</span> scales<span class="sc">::</span><span class="fu">dollar</span>(pi, <span class="at">prefix =</span> <span class="st">"R$"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">decimal.mark =</span> <span class="st">','</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="at">big.mark =</span> <span class="st">'.'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Número pi 3.14</p>
+<p>Reais R$3,14</p>
 </section>
-<section id="outros" class="level2">
-<h2 class="anchored" data-anchor-id="outros">4.4 Outros</h2>
+<section id="personalizar-templates" class="level1">
+<h1>0.8 Personalizar templates</h1>
+<p>styles.css</p>
 </section>
+<section id="mermaid" class="level1">
+<h1>0.9 Mermaid</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">%%| fig-width: 6.5
+
+flowchart LR
+
+A[Hard edge] --&gt; B(Round edge)
+
+B --&gt; C{Decision}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+
+participant Alice
+
+participant Bob
+
+Alice-&gt;&gt;John: Hello John, how are you?
+
+loop Healthcheck
+
+John-&gt;&gt;John: Fight against hypochondria
+
+end
+
+Note right of John: Rational thoughts &lt;br/&gt;prevail!
+
+John--&gt;&gt;Alice: Great!
+
+John-&gt;&gt;Bob: How about you?
+
+Bob--&gt;&gt;John: Jolly good!
+
+</pre>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="índices-de-ligação" class="level1">
-<h1>5. Índices de Ligação</h1>
-<section id="índices-de-ligações-hr" class="level2">
-<h2 class="anchored" data-anchor-id="índices-de-ligações-hr">5.1 Índices de Ligações HR</h2>
-</section>
-<section id="índices-puros-de-ligação" class="level2">
-<h2 class="anchored" data-anchor-id="índices-puros-de-ligação">5.2 Índices Puros de Ligação</h2>
-</section>
-</section>
-<section id="campo-de-influência" class="level1">
-<h1>6. Campo de Influência</h1>
-</section>
-<section id="extração-hipotética" class="level1">
-<h1>7. Extração Hipotética</h1>
-</section>
-<section id="decomposição-estrutural" class="level1">
-<h1>8. Decomposição Estrutural</h1>
+<section id="font-awesome" class="level1">
+<h1>10 Font awesome</h1>
+<p>Instalar as extensões</p>
+<pre><code>
+quarto add quarto-ext/fontawesome</code></pre>
+<p><i class="fa-solid fa-thumbs-up" aria-label="thumbs-up"></i></p>
+<p><i class="fa-solid fa-folder" aria-label="folder"></i></p>
+<p><i class="fa-solid fa-chess-pawn" aria-label="chess-pawn"></i></p>
+<p><i class="fa-brands fa-bluetooth" aria-label="bluetooth"></i></p>
+<p><i class="fa-brands fa-twitter fa-2xl" aria-label="twitter"></i></p>
+<p><i class="fa-brands fa-github fa-5x" aria-label="github"></i></p>
+<p><i class="fa-solid fa-battery-half fa-Huge" aria-label="battery-half"></i></p>
+<p><i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></p>
 
 
 </section>
