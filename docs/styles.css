@@ -1,6 +1,6 @@
 /* css styles */
 .navbar-dark {
-    background-color: #39566a;
+ /*   background-color: #39566a;*/
     font-weight: bold;
     font-size: 18px;
     font-family: Helvetica;
@@ -15,7 +15,4 @@
   color: white !important;
 
 }
-div {
-  text-align: justify;
-  text-justify: inter-word;
-}
+body {text-align: justify}
