@@ -149,9 +149,9 @@
   {
     "objectID": "idh.html",
     "href": "idh.html",
-    "title": "IDH",
+    "title": "IDHM",
     "section": "",
-    "text": "Em elaboração.\n\n1 Dados\n\n\n\n\n\n\n\n\n\n De volta ao topo"
+    "text": "O Índice de Desenvolvimento Humano Municipal (IDHM) é uma medida composta que avalia o desenvolvimento humano em nível municipal, ou seja, para cidades e municípios. Ele foi desenvolvido pelo Programa das Nações Unidas para o Desenvolvimento (PNUD) e é uma extensão do Índice de Desenvolvimento Humano (IDH) usado para avaliar o desenvolvimento em nível nacional.\nO IDHM municipal é composto por três dimensões principais, cada uma com seus próprios indicadores:\n\nSaúde: Esta dimensão avalia a qualidade de vida e a expectativa de vida da população do município.\n\n\nIndicador de Expectativa de Vida ao Nascer\n\n\nEducação: Esta dimensão mede o acesso à educação e a qualidade do ensino.\n\n\nIndicador de Frequência Escolar de Crianças e Adolescentes\nIndicador de Taxa de Escolarização Líquida no Ensino Fundamental\n\n\nRenda: Esta dimensão avalia a capacidade do município em proporcionar um padrão de vida adequado para seus habitantes.\n\n\nIndicador de Renda per Capita\n\n\n\nOs dados para cada um dos indicadores são coletados de fontes oficiais, como os Censos Demográficos realizados pelo Instituto Brasileiro de Geografia e Estatística (IBGE) e outras fontes governamentais confiáveis.\n\n\n\nAssim como no cálculo do IDH, os dados de cada indicador são normalizados para uma escala que varia de 0 a 1. Isso significa que cada indicador é ajustado para que 0 represente o pior desempenho possível e 1 represente o melhor desempenho.\n\n\n\nPara cada uma das três dimensões (saúde, educação e renda), um componente é calculado usando os indicadores normalizados. Isso cria um componente de saúde, um componente de educação e um componente de renda.\n\n\n\nO IDHM é calculado a partir dos componentes de saúde, educação e renda usando a média geométrica. A média geométrica é uma forma de agregação que considera a multiplicação dos valores em vez da média aritmética, o que significa que uma baixa pontuação em qualquer uma das dimensões afeta significativamente o IDHM geral.\n\n\n\nAssim como o IDH nacional, o IDHM municipal permite classificar os municípios em categorias de desenvolvimento, como “muito alto desenvolvimento humano”, “alto desenvolvimento humano”, “médio desenvolvimento humano” e “baixo desenvolvimento humano”. As categorias são baseadas nas pontuações do IDHM, e essas classificações podem ser usadas para orientar políticas públicas e intervenções em nível municipal.\nO IDHM municipal é uma ferramenta valiosa para avaliar e comparar o desenvolvimento humano em diferentes áreas geográficas dentro de um país, permitindo que os governos locais e nacionais tomem medidas para melhorar a qualidade de vida e o bem-estar de suas populações."
   },
   {
     "objectID": "index2.html",
@@ -201,5 +201,47 @@
     "title": "Matriz Insumo-Produto",
     "section": "Índices Puros de Ligação",
     "text": "Índices Puros de Ligação"
+  },
+  {
+    "objectID": "idh.html#coleta-de-dados",
+    "href": "idh.html#coleta-de-dados",
+    "title": "IDHM",
+    "section": "",
+    "text": "Os dados para cada um dos indicadores são coletados de fontes oficiais, como os Censos Demográficos realizados pelo Instituto Brasileiro de Geografia e Estatística (IBGE) e outras fontes governamentais confiáveis."
+  },
+  {
+    "objectID": "idh.html#normalização-de-dados",
+    "href": "idh.html#normalização-de-dados",
+    "title": "IDHM",
+    "section": "",
+    "text": "Assim como no cálculo do IDH, os dados de cada indicador são normalizados para uma escala que varia de 0 a 1. Isso significa que cada indicador é ajustado para que 0 represente o pior desempenho possível e 1 represente o melhor desempenho."
+  },
+  {
+    "objectID": "idh.html#cálculo-do-idhm",
+    "href": "idh.html#cálculo-do-idhm",
+    "title": "IDHM",
+    "section": "",
+    "text": "O IDHM é calculado a partir dos componentes de saúde, educação e renda usando a média geométrica. A média geométrica é uma forma de agregação que considera a multiplicação dos valores em vez da média aritmética, o que significa que uma baixa pontuação em qualquer uma das dimensões afeta significativamente o IDHM geral."
+  },
+  {
+    "objectID": "idh.html#classificação",
+    "href": "idh.html#classificação",
+    "title": "IDHM",
+    "section": "",
+    "text": "Assim como o IDH nacional, o IDHM municipal permite classificar os municípios em categorias de desenvolvimento, como “muito alto desenvolvimento humano”, “alto desenvolvimento humano”, “médio desenvolvimento humano” e “baixo desenvolvimento humano”. As categorias são baseadas nas pontuações do IDHM, e essas classificações podem ser usadas para orientar políticas públicas e intervenções em nível municipal.\nO IDHM municipal é uma ferramenta valiosa para avaliar e comparar o desenvolvimento humano em diferentes áreas geográficas dentro de um país, permitindo que os governos locais e nacionais tomem medidas para melhorar a qualidade de vida e o bem-estar de suas populações."
+  },
+  {
+    "objectID": "idh.html#cálculo-dos-componentes-do-idhm",
+    "href": "idh.html#cálculo-dos-componentes-do-idhm",
+    "title": "IDHM",
+    "section": "",
+    "text": "Para cada uma das três dimensões (saúde, educação e renda), um componente é calculado usando os indicadores normalizados. Isso cria um componente de saúde, um componente de educação e um componente de renda."
+  },
+  {
+    "objectID": "idh.html#idhm-2010",
+    "href": "idh.html#idhm-2010",
+    "title": "IDHM",
+    "section": "2.1 IDHM 2010",
+    "text": "2.1 IDHM 2010"
   }
 ]
